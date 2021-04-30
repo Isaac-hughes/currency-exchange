@@ -1,0 +1,12 @@
+<form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+    <input type="number" formControlName="inputValue">
+    <select id="currencyA" formControlName="currencyA">
+        <option *ngFor="let c of currencies" [ngValue]="c">{{ c }}</option>
+    </select>
+    <select id="currencyB" formControlName="currencyB">
+        <option *ngFor="let c of currencies" [ngValue]="c">{{ c }}</option>
+    </select>
+    <button type="submit">Convert</button>
+</form>
+
+<p [hidden]="hidden">{{displayObj.startValue}}{{displayObj.from}} is equal to {{displayObj.endValue}}{{displayObj.to}}</p>
